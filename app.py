@@ -3,25 +3,22 @@ import json
 import os
 from langchain_groq import ChatGroq
 from gtts import gTTS
-from dotenv import load_dotenv
 import base64
 
-# Load environment variables
-load_dotenv()
+
 
 # Load profile data from JSON file
 with open('profile.json') as f:
     data = json.load(f)
 
-# Initialize LLM (Ensure API key is set in .env)
-
-
+api_key= st.secrets['GROQ_API_KEY']
 llm = ChatGroq(
+
     model='llama-3.1-8b-instant',
-    
+    api_key=api_key,
     verbose=True,
     max_tokens=None
-)
+  )
 
 # Text-to-Speech Function
 def text_to_speech(text, filename="response.mp3"):
