@@ -4,6 +4,8 @@ import os
 from langchain_groq import ChatGroq
 from gtts import gTTS
 import base64
+from dotenv import load_dotenv
+load_dotenv()
 
 
 
@@ -11,11 +13,11 @@ import base64
 with open('profile.json') as f:
     data = json.load(f)
 
-api_key= st.secrets['GROQ_API_KEY']
+
 llm = ChatGroq(
 
     model='llama-3.1-8b-instant',
-    api_key=api_key,
+    
     verbose=True,
     max_tokens=None
   )
