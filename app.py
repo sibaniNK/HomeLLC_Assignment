@@ -47,7 +47,7 @@ if "messages" not in st.session_state:
     ]
 
 st.title("💬 AI Interview Chatbot")
-st.write("Ask about **SIBANI NAYAK**, and the AI will answer professionally!")
+st.write("Ask about **SIBANI NAYAK**, and the AI will answer professionally! please wait for a few seconds for the speech to be generated.")
 
 # Display chat history
 for msg in st.session_state.messages:
